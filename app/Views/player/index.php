@@ -60,7 +60,6 @@
                             <th>Audio File</th>
                             <th>Description</th>
                             <th>Download</th>
-                            <th> <input type='checkbox'> </th>
                         </tr>
                     </thead>
                 </table>
@@ -117,15 +116,6 @@
             tableFiles.draw();
         });
 
-        // let debounceTimeout;
-        // const delay = 500; 
-        // $('#file_name').on('input', function() {
-        //     clearTimeout(debounceTimeout);
-        //     debounceTimeout = setTimeout(function() {
-        //         tableFiles.draw();                                
-        //     }, delay);
-        // });
-
         let tableFiles = $('#table_files').DataTable({
             processing: true,
             serverSide: true,
@@ -138,7 +128,6 @@
                     if(channel.length > 0){
                         d.channel = channel[0]['id']; 
                     }
-                    // d.file_name = $('#file_name').val();
                     d.time_start = $('#time_start').val();
                     d.time_end = $('#time_end').val();
                 }                
@@ -159,7 +148,6 @@
 
         $('#btn_reset').on('click', function() {
             let now = moment();
-            // $("#file_name").val('');
             $('#channel_name').val(null).trigger('change');
             $('#time_start').data('daterangepicker').setStartDate('2024-08-01 00:00:00')            
             $('#time_end').data('daterangepicker').setStartDate(now)            

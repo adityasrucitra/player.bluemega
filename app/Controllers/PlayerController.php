@@ -124,7 +124,7 @@ class PlayerController extends BaseController
                 Your browser does not support the audio element.
             </audio>
             ";
-            $strDownload ="
+            $strDownload = "
             <a href='{$d['path']}' download='{$d['path']}'>
                 <button>
                    <i class='fas fa-download'></i> Download Audio
@@ -141,7 +141,7 @@ class PlayerController extends BaseController
                 $d['file_name'],
                 $str,
                 $strDownload,
-                $strCheckBox
+                // $strCheckBox
             ];
             $i++;
         }
